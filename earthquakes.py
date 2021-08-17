@@ -1,6 +1,4 @@
-# 
-# Example file for parsing and processing JSON
-#
+
 import urllib.request 
 import json 
 
