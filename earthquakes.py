@@ -5,21 +5,19 @@ import json
 def printResults(data):
   # Use the json module to load the string data into a dictionary
   theJSON = json.loads(data)
-  #if "title" in theJSON["metadata"]:
-  #  print(theJSON["metadata"]["title"])
+  if "title" in theJSON["metadata"]:
+    print(theJSON["metadata"]["title"])
     
   
-  # now we can access the contents of the JSON like any other Python object
-
   count = theJSON["metadata"]["count"]
   print(str(count) + " events recorded")
   # output the number of events, plus the magnitude and each event name  
 
   
-  # for each event, print the place where it occurred
- # for i in theJSON["features"]:
- #       print(i["properties"]["place"])
- # print("--------\n")
+ # for each event, print the place where it occurred
+ for i in theJSON["features"]:
+        print(i["properties"]["place"])
+ print("--------\n")
 
   # print the events that only have a magnitude greater than 4
   for i in theJSON["features"]:
